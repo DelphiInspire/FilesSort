@@ -1,0 +1,24 @@
+# ninja log v5
+4	844	1650052256036356565	CMakeFiles/filessort.dir/Matrix.cpp.o	d02576264865344d
+4	693	1650052255886568982	CMakeFiles/filessort.dir/Sorter.cpp.o	d131462607abc087
+774	862	1650052291693983985	filessort	b7d11baf614a71af
+4	1018	1650052256210599586	CMakeFiles/filessort.dir/Loader.cpp.o	bf40edba6449a87c
+3	774	1650052291602533845	CMakeFiles/filessort.dir/main.cpp.o	cc6effef31ef68be
+3	775	1650052303351302996	CMakeFiles/filessort.dir/main.cpp.o	cc6effef31ef68be
+775	869	1650052303447436494	filessort	b7d11baf614a71af
+3	946	1650052620670313557	CMakeFiles/filessort.dir/main.cpp.o	cc6effef31ef68be
+946	1079	1650052620808028079	filessort	b7d11baf614a71af
+3	853	1650052627915327031	CMakeFiles/filessort.dir/main.cpp.o	cc6effef31ef68be
+854	936	1650052628002056399	filessort	b7d11baf614a71af
+3	838	1650052667256832231	CMakeFiles/filessort.dir/main.cpp.o	cc6effef31ef68be
+838	938	1650052667361624840	filessort	b7d11baf614a71af
+4	1053	1650052954932992116	CMakeFiles/filessort.dir/Matrix.cpp.o	d02576264865344d
+3	1263	1650052955139302292	CMakeFiles/filessort.dir/main.cpp.o	cc6effef31ef68be
+4	1362	1650052955254655854	CMakeFiles/filessort.dir/Loader.cpp.o	bf40edba6449a87c
+3	804	1650052975957616359	CMakeFiles/filessort.dir/Sorter.cpp.o	d131462607abc087
+804	917	1650052976078777284	filessort	b7d11baf614a71af
+5	593	1650053797268846129	CMakeFiles/filessort.dir/Sorter.cpp.o	d131462607abc087
+4	810	1650053797482444912	CMakeFiles/filessort.dir/main.cpp.o	cc6effef31ef68be
+3	790	1650053849035960538	CMakeFiles/filessort.dir/main.cpp.o	cc6effef31ef68be
+4	839	1650053849083684810	CMakeFiles/filessort.dir/Loader.cpp.o	bf40edba6449a87c
+839	943	1650053849192838524	filessort	b7d11baf614a71af
