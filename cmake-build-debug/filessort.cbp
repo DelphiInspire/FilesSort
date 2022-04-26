@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="filessort"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/serhii/FoxMinded/FoxPets/filessort/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/serhii/FoxMinded/FoxPets/filessort/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/serhii/FoxMinded/FoxPets/filessort/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/serhii/FoxMinded/FoxPets/filessort/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/serhii/FoxMinded/FoxPets/filessort/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="filessort">
+				<Option output="/Users/serhii/FoxMinded/FoxPets/filessort/cmake-build-debug/filessort" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/serhii/FoxMinded/FoxPets/filessort/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/serhii/FoxMinded/FoxPets/filessort/cmake-build-debug/Makefile&quot;  VERBOSE=1 filessort"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/serhii/FoxMinded/FoxPets/filessort/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/serhii/FoxMinded/FoxPets/filessort/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/serhii/FoxMinded/FoxPets/filessort/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="filessort/fast">
+				<Option output="/Users/serhii/FoxMinded/FoxPets/filessort/cmake-build-debug/filessort" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/serhii/FoxMinded/FoxPets/filessort/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/13.1.6/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/serhii/FoxMinded/FoxPets/filessort/cmake-build-debug/Makefile&quot;  VERBOSE=1 filessort/fast"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/serhii/FoxMinded/FoxPets/filessort/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/serhii/FoxMinded/FoxPets/filessort/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/serhii/FoxMinded/FoxPets/filessort/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/serhii/FoxMinded/FoxPets/filessort/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/serhii/FoxMinded/FoxPets/filessort/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/serhii/FoxMinded/FoxPets/filessort/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/serhii/FoxMinded/FoxPets/filessort/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/serhii/FoxMinded/FoxPets/filessort/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/serhii/FoxMinded/FoxPets/filessort/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j12 -f &quot;/Users/serhii/FoxMinded/FoxPets/filessort/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j12 -f &quot;/Users/serhii/FoxMinded/FoxPets/filessort/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j12 -f &quot;/Users/serhii/FoxMinded/FoxPets/filessort/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j12 -f &quot;/Users/serhii/FoxMinded/FoxPets/filessort/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/serhii/FoxMinded/FoxPets/filessort/Loader.cpp">
+			<Option target="filessort"/>
+		</Unit>
+		<Unit filename="/Users/serhii/FoxMinded/FoxPets/filessort/Loader.h">
+			<Option target="filessort"/>
+		</Unit>
+		<Unit filename="/Users/serhii/FoxMinded/FoxPets/filessort/Matrix.cpp">
+			<Option target="filessort"/>
+		</Unit>
+		<Unit filename="/Users/serhii/FoxMinded/FoxPets/filessort/Matrix.h">
+			<Option target="filessort"/>
+		</Unit>
+		<Unit filename="/Users/serhii/FoxMinded/FoxPets/filessort/Sorter.cpp">
+			<Option target="filessort"/>
+		</Unit>
+		<Unit filename="/Users/serhii/FoxMinded/FoxPets/filessort/Sorter.h">
+			<Option target="filessort"/>
+		</Unit>
+		<Unit filename="/Users/serhii/FoxMinded/FoxPets/filessort/main.cpp">
+			<Option target="filessort"/>
+		</Unit>
+		<Unit filename="/Users/serhii/FoxMinded/FoxPets/filessort/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

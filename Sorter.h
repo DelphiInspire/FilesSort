@@ -3,14 +3,34 @@
 class Sorter
 {
 public:
-    void quickSort(Matrix* sort_array, int low_element, int high_element);
-    void bubbleSort(Matrix* sort_array, size_t size);
-    void shellSort(Matrix* array, size_t size);
-private:
-    int partition(Matrix* array, int low, int high);
-    static std::tuple<float, float> GetComparisonValues(Matrix* lcomp, Matrix* rcomp);
-    static void swap(Matrix* input_1, Matrix* input_2);
-    static void try_shift_value(Matrix* array, size_t position, size_t interval);
+    virtual void sort(std::vector<cash_info>& sortList) = 0;
+protected:
+    static std::tuple<float, float> GetComparisonValues(const Matrix& lcomp, const Matrix& rcomp);
+    static void try_shift_value(std::vector<cash_info>& array, size_t position, size_t interval);
+    static void swap(cash_info* input_1, cash_info* input_2);
 };
 
+class QuickSort: public Sorter
+{
+public:
+    void sort(std::vector<cash_info>& sortList) override;
+private:
+    void Qsort(std::vector<cash_info>& sortList, int low, int high);
+    int partition(std::vector<cash_info>& arrangeList, int low, int high);
+private:
+    int startListPos;
+    int stopListPos;
+};
+
+class BubbleSort: public Sorter
+{
+public:
+    void sort(std::vector<cash_info>& sortList) override;
+};
+
+class ShellSort: public Sorter
+{
+public:
+    void sort(std::vector<cash_info>& sortList) override;
+};
 

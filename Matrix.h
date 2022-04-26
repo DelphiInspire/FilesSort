@@ -4,6 +4,7 @@
 #include<cmath>
 #include"Exception.h"
 
+
 class Matrix
 {
 public:
@@ -97,4 +98,11 @@ protected:
 	bool isAllowDeterminant() const;
 	bool isPlusOverflow(const float firstMember, const float secondMember) const;
 	bool isMinusOverflow(const float firstMember, const float secondMember) const;
+};
+
+struct cash_info
+{
+    cash_info(std::string name, Matrix inMatrix): owner_id{std::move(name)}, slave_data{std::move(inMatrix)}{};
+    std::string owner_id;
+    Matrix slave_data;
 };

@@ -1,84 +1,96 @@
 #include "Sorter.h"
 
-void Sorter::swap(Matrix *input_1, Matrix *input_2) {
-    Matrix buffer = *input_1;
+void Sorter::swap(cash_info *input_1, cash_info *input_2) {
+    cash_info buffer = *input_1;
     *input_1 = *input_2;
     *input_2 = buffer;
 }
 
-std::tuple<float, float> Sorter::GetComparisonValues(Matrix *lcomp, Matrix *rcomp)
+void Sorter::try_shift_value(std::vector<cash_info>& sortList, size_t position, size_t interval)
 {
-    float lDiagonalsSum{lcomp->getSumDiagonalsResult()};
-    float rDiagonalsSum{rcomp->getSumDiagonalsResult()};
-    float lTraceSum{lcomp->getMajorDiagonalSum()};
-    float rTraceSum{rcomp->getMajorDiagonalSum()};
+    for (int left_counter = position - interval, right_counter = position; left_counter >= 0; right_counter = left_counter, left_counter -= interval)
+    {
+        auto [left_Matrix, right_Matrix] = GetComparisonValues(sortList.at(left_counter).slave_data,
+                                                                            sortList.at(right_counter).slave_data);
+        if(right_Matrix <= left_Matrix)
+        {
+            swap(&sortList.at(right_counter), &sortList.at(left_counter));
+        }
+    }
+}
+
+std::tuple<float, float> Sorter::GetComparisonValues(const Matrix& lcomp, const Matrix& rcomp)
+{
+    float lDiagonalsSum{lcomp.getSumDiagonalsResult()};
+    float rDiagonalsSum{rcomp.getSumDiagonalsResult()};
     //choose the way to comparison
     if (lDiagonalsSum != rDiagonalsSum) {
         return std::make_tuple(lDiagonalsSum, rDiagonalsSum);
     }
     else
     {
+        float lTraceSum{lcomp.getMajorDiagonalSum()};
+        float rTraceSum{rcomp.getMajorDiagonalSum()};
         return std::make_tuple(lTraceSum, rTraceSum);
     }
 }
 
-int Sorter::partition(Matrix *array, int low, int high)
+int QuickSort::partition(std::vector<cash_info>& arrangeList, int low, int high)
 {
     int position = low - 1;
     for (size_t i = low; i < high; ++i) {
         //choose the way to comparison
-        auto [step_comparator, pivot] = GetComparisonValues(&array[i], &array[high]);
+        auto [step_comparator, pivot] = GetComparisonValues(arrangeList.at(i).slave_data,
+                                                                        arrangeList.at(high).slave_data);
         //rearranging array
         if (step_comparator <= pivot)
         {
             position++;
-            swap(&array[position], &array[i]);
+            swap(&arrangeList.at(position), &arrangeList.at(i));
         }
     }
-    swap(&array[position + 1], &array[high]);
+    swap(&arrangeList.at(position + 1), &arrangeList.at(high));
     return (position + 1);
 }
 
-void Sorter::try_shift_value(Matrix* array, size_t position, size_t interval)
+void QuickSort::sort(std::vector<cash_info> &sortList)
 {
-    for (int left_counter = position - interval, right_counter = position; left_counter >= 0; right_counter = left_counter, left_counter -= interval)
+    startListPos = 0;
+    stopListPos = sortList.size() - 1;
+    Qsort(sortList, startListPos, stopListPos);
+}
+
+void QuickSort::Qsort(std::vector<cash_info> &sortList, int low, int high)
+{
+    if(low < high)
     {
-        auto [left_Matrix, right_Matrix] = GetComparisonValues(&array[left_counter], &array[right_counter]);
-        if(right_Matrix <= left_Matrix)
+        int pi = partition(sortList, low, high);
+        Qsort(sortList, low, pi - 1);
+        Qsort(sortList, pi + 1, high);
+    }
+}
+
+void BubbleSort::sort(std::vector<cash_info>& sortList)
+{
+    size_t stop_pos{sortList.size()};
+    for (size_t run_counter = 0; run_counter < stop_pos - 1; run_counter++)
+    {
+        for (size_t counter = 0; counter < stop_pos - run_counter - 1; counter++)
         {
-            swap(&array[right_counter], &array[left_counter]);
+            auto [l_member, r_member] = GetComparisonValues(sortList.at(counter).slave_data,
+                                                            sortList.at(counter + 1).slave_data);
+            if (l_member >= r_member)
+            {
+                swap(&sortList.at(counter), &sortList.at(counter + 1));
+            }
         }
     }
 }
 
-
-void Sorter::quickSort(Matrix *sort_array, int low_element, int high_element) {
-    if (low_element < high_element) {
-        int pi = partition(sort_array, low_element, high_element);
-        //low_case
-        quickSort(sort_array, low_element, pi - 1);
-        //greater_case
-        quickSort(sort_array, pi + 1, high_element);
-    }
-}
-
-void Sorter::bubbleSort(Matrix *sort_array, size_t size) {
-
-    bool complete{true};
-    for (size_t counter = 0; counter < size - 1; counter++) {
-        auto [l_member, r_member] = GetComparisonValues(&sort_array[counter], &sort_array[counter + 1]);
-        if (l_member >= r_member) {
-            complete = false;
-            swap(&sort_array[counter], &sort_array[counter + 1]);
-        }
-    }
-    if (!complete) {
-        bubbleSort(sort_array, size - 1);
-    }
-}
-
-void Sorter::shellSort(Matrix* array, size_t size) {
+void ShellSort::sort(std::vector<cash_info> &sortList)
+{
     constexpr size_t step_modificator{2};
+    size_t size{sortList.size()};
     size_t interval{static_cast<size_t>(size / step_modificator)};
     bool success_check_sort{false};
     while(!success_check_sort)
@@ -89,12 +101,14 @@ void Sorter::shellSort(Matrix* array, size_t size) {
         }
         for(size_t left_counter = 0, right_counter = interval;  right_counter < size; left_counter++, right_counter = left_counter + interval)
         {
-            auto [left_Matrix, right_Matrix] = GetComparisonValues(&array[left_counter], &array[right_counter]);
+            auto [left_Matrix, right_Matrix] = GetComparisonValues(sortList.at(left_counter).slave_data,
+                                                                                sortList.at(right_counter).slave_data);
             if (left_Matrix >= right_Matrix)
             {
-                try_shift_value(array, right_counter, interval);
+                try_shift_value(sortList, right_counter, interval);
             }
         }
         interval = static_cast<size_t>(interval / step_modificator);
     }
 }
+
