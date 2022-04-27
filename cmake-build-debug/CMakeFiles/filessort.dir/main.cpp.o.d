@@ -1,6 +1,6 @@
 CMakeFiles/filessort.dir/main.cpp.o: \
   /Users/serhii/FoxMinded/FoxPets/filessort/main.cpp \
-  /Users/serhii/FoxMinded/FoxPets/filessort/Loader.h \
+  /Users/serhii/FoxMinded/FoxPets/filessort/Sorter.h \
   /Users/serhii/FoxMinded/FoxPets/filessort/Matrix.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/string \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__config \
@@ -367,6 +367,7 @@ CMakeFiles/filessort.dir/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/math.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/math.h \
   /Users/serhii/FoxMinded/FoxPets/filessort/Exception.h \
+  /Users/serhii/FoxMinded/FoxPets/filessort/Loader.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/fstream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__locale \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/mutex \
@@ -429,5 +430,4 @@ CMakeFiles/filessort.dir/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__functional/is_transparent.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__node_handle \
   /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/optional \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__tree \
-  /Users/serhii/FoxMinded/FoxPets/filessort/Sorter.h
+  /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__tree

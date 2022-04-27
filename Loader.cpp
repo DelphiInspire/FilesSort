@@ -1,12 +1,12 @@
 #include "Loader.h"
 #include "iostream"
 
-std::tuple<bool, size_t> Loader::isInCash(const std::vector<cash_info>& cash, const std::string& name)
+std::tuple<bool, size_t> ILoader::isInCache(const std::vector<cache_info>& cache, const std::string& name)
 {
 
-    for (size_t searcher_id = 0; searcher_id < cash.size(); ++searcher_id)
+    for (size_t searcher_id = 0; searcher_id < cache.size(); ++searcher_id)
     {
-        if (cash.at(searcher_id).owner_id == name)
+        if (cache.at(searcher_id).owner_id == name)
         {
              return std::make_tuple(true, searcher_id);
         }
@@ -26,11 +26,11 @@ Matrix ConsoleLoader::loadMatrix()
     std::cout << "Please give the name to input matrix"<< std::endl;
     std::cin >> MatrixName;
 
-    auto [isPresent, where] = isInCash(cashBuffer, MatrixName);
+    auto [isPresent, where] = isInCache(cacheBuffer, MatrixName);
     if(!isPresent)
     {
-        cashBuffer.emplace_back(cash_info{MatrixName, processMatrix});
-        return cashBuffer.back().slave_data;
+        cacheBuffer.emplace_back(cache_info{MatrixName, processMatrix});
+        return cacheBuffer.back().slave_data;
     }
     else
     {
@@ -38,16 +38,17 @@ Matrix ConsoleLoader::loadMatrix()
     }
 }
 
-void ConsoleLoader::clear_cash()
+void ConsoleLoader::clear_cache()
 {
-    if (!cashBuffer.empty())
+    if (!cacheBuffer.empty())
     {
-        cashBuffer.clear();
+        cacheBuffer.clear();
     }
 }
 
 Matrix FileLoader::loadMatrix()
 {
+    std::ifstream read_thread;
     std::string getter_matrix;
     read_thread.open(path);
     if(read_thread.is_open())
@@ -60,24 +61,24 @@ Matrix FileLoader::loadMatrix()
 
 Matrix FileLoader::loadMatrix(const std::string& fileName)
 {
-    auto [isPresent, where] = isInCash(cashBuffer, fileName);
+    auto [isPresent, where] = isInCache(cacheBuffer, fileName);
     if (!isPresent)
     {
         setFileName(std::filesystem::absolute(fileName));
-        cashBuffer.emplace_back(cash_info(fileName, loadMatrix()));
-        return cashBuffer.at(cashBuffer.size() - 1).slave_data;
+        cacheBuffer.emplace_back(cache_info(fileName, loadMatrix()));
+        return cacheBuffer.at(cacheBuffer.size() - 1).slave_data;
     }
     else
     {
-        return cashBuffer.at(where).slave_data;
+        return cacheBuffer.at(where).slave_data;
     }
 }
 
-void FileLoader::clear_cash()
+void FileLoader::clear_cache()
 {
 
-    if(!cashBuffer.empty())
+    if(!cacheBuffer.empty())
     {
-        cashBuffer.clear();
+        cacheBuffer.clear();
     }
 }

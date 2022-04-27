@@ -1,12 +1,12 @@
 #include "Sorter.h"
 
-void Sorter::swap(cash_info *input_1, cash_info *input_2) {
-    cash_info buffer = *input_1;
+void Sorter::swap(cache_info *input_1, cache_info *input_2) {
+    cache_info buffer = *input_1;
     *input_1 = *input_2;
     *input_2 = buffer;
 }
 
-void Sorter::try_shift_value(std::vector<cash_info>& sortList, size_t position, size_t interval)
+void Sorter::try_shift_value(std::vector<cache_info>& sortList, size_t position, size_t interval)
 {
     for (int left_counter = position - interval, right_counter = position; left_counter >= 0; right_counter = left_counter, left_counter -= interval)
     {
@@ -35,7 +35,7 @@ std::tuple<float, float> Sorter::GetComparisonValues(const Matrix& lcomp, const 
     }
 }
 
-int QuickSort::partition(std::vector<cash_info>& arrangeList, int low, int high)
+int QuickSort::partition(std::vector<cache_info>& arrangeList, int low, int high)
 {
     int position = low - 1;
     for (size_t i = low; i < high; ++i) {
@@ -53,14 +53,14 @@ int QuickSort::partition(std::vector<cash_info>& arrangeList, int low, int high)
     return (position + 1);
 }
 
-void QuickSort::sort(std::vector<cash_info> &sortList)
+void QuickSort::sort(std::vector<cache_info> &sortList)
 {
     startListPos = 0;
     stopListPos = sortList.size() - 1;
     Qsort(sortList, startListPos, stopListPos);
 }
 
-void QuickSort::Qsort(std::vector<cash_info> &sortList, int low, int high)
+void QuickSort::Qsort(std::vector<cache_info> &sortList, int low, int high)
 {
     if(low < high)
     {
@@ -70,7 +70,7 @@ void QuickSort::Qsort(std::vector<cash_info> &sortList, int low, int high)
     }
 }
 
-void BubbleSort::sort(std::vector<cash_info>& sortList)
+void BubbleSort::sort(std::vector<cache_info>& sortList)
 {
     size_t stop_pos{sortList.size()};
     for (size_t run_counter = 0; run_counter < stop_pos - 1; run_counter++)
@@ -87,7 +87,7 @@ void BubbleSort::sort(std::vector<cash_info>& sortList)
     }
 }
 
-void ShellSort::sort(std::vector<cash_info> &sortList)
+void ShellSort::sort(std::vector<cache_info> &sortList)
 {
     constexpr size_t step_modificator{2};
     size_t size{sortList.size()};
