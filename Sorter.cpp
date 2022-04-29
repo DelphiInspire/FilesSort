@@ -1,12 +1,12 @@
 #include "Sorter.h"
 
-void Sorter::swap(cache_info *input_1, cache_info *input_2) {
+void ISorter::swap(cache_info *input_1, cache_info *input_2) {
     cache_info buffer = *input_1;
     *input_1 = *input_2;
     *input_2 = buffer;
 }
 
-void Sorter::try_shift_value(std::vector<cache_info>& sortList, size_t position, size_t interval)
+void ISorter::try_shift_value(std::vector<cache_info>& sortList, size_t position, size_t interval)
 {
     for (int left_counter = position - interval, right_counter = position; left_counter >= 0; right_counter = left_counter, left_counter -= interval)
     {
@@ -19,7 +19,7 @@ void Sorter::try_shift_value(std::vector<cache_info>& sortList, size_t position,
     }
 }
 
-std::tuple<float, float> Sorter::GetComparisonValues(const Matrix& lcomp, const Matrix& rcomp)
+std::tuple<float, float> ISorter::GetComparisonValues(const Matrix& lcomp, const Matrix& rcomp) const
 {
     float lDiagonalsSum{lcomp.getSumDiagonalsResult()};
     float rDiagonalsSum{rcomp.getSumDiagonalsResult()};

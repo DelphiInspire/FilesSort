@@ -1,18 +1,18 @@
 #include"Matrix.h"
 #include"Loader.h"
-class Sorter
+class ISorter
 {
 public:
     virtual void sort(std::vector<cache_info>& sortList) = 0;
 protected:
-    static std::tuple<float, float> GetComparisonValues(const Matrix& lcomp, const Matrix& rcomp);
-    static void try_shift_value(std::vector<cache_info>& array, size_t position, size_t interval);
-    static void swap(cache_info* input_1, cache_info* input_2);
+    virtual std::tuple<float, float> GetComparisonValues(const Matrix& lcomp, const Matrix& rcomp) const;
+    virtual void try_shift_value(std::vector<cache_info>& array, size_t position, size_t interval);
+    virtual void swap(cache_info* input_1, cache_info* input_2);
 public:
-    virtual ~Sorter(){};
+    virtual ~ISorter(){};
 };
 
-class QuickSort: public Sorter
+class QuickSort: public ISorter
 {
 public:
     void sort(std::vector<cache_info>& sortList) override;
@@ -24,13 +24,13 @@ private:
     int stopListPos;
 };
 
-class BubbleSort: public Sorter
+class BubbleSort: public ISorter
 {
 public:
     void sort(std::vector<cache_info>& sortList) override;
 };
 
-class ShellSort: public Sorter
+class ShellSort: public ISorter
 {
 public:
     void sort(std::vector<cache_info>& sortList) override;
