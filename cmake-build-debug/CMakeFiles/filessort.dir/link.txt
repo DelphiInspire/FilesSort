@@ -1,1 +1,0 @@
-/usr/bin/g++ -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.3.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/filessort.dir/main.cpp.o CMakeFiles/filessort.dir/Loader.cpp.o CMakeFiles/filessort.dir/Matrix.cpp.o CMakeFiles/filessort.dir/Sorter.cpp.o -o filessort 

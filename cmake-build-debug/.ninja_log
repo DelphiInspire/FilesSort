@@ -1,0 +1,9 @@
+# ninja log v5
+1	938	1652174030438187505	CMakeFiles/filessort.dir/Matrix.cpp.o	9574fce1ffd4ee32
+1	969	1652174030468636111	CMakeFiles/filessort.dir/Sorter.cpp.o	284fb44089a30a2e
+0	980	1652174030479698940	CMakeFiles/filessort.dir/main.cpp.o	f1dacb09d0994e5
+3	680	1652174083088787638	CMakeFiles/filessort.dir/Matrix.cpp.o	ae009c097889d484
+2	842	1652174083249623125	CMakeFiles/filessort.dir/main.cpp.o	6b1a5a7a09a313d0
+3	843	1652174083251082495	CMakeFiles/filessort.dir/Sorter.cpp.o	a351ef1e9cd63aa2
+2	986	1652174083393830156	CMakeFiles/filessort.dir/Loader.cpp.o	a6b94f79c4265850
+986	1081	1652174083491150415	filessort	57728e88d9952fa1
